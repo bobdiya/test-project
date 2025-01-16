@@ -5,18 +5,21 @@ import Home from './pages/Home';
 import Categories from './pages/Categories';
 import Cart from './pages/Cart';
 import { CarProvider } from './context/CarContext';
+import { CartProvider } from './context/CartContext';
 
 const App = () => {
   return (
     <CarProvider>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-      </Router>
+      <CartProvider>
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </Router>
+      </CartProvider>
     </CarProvider>
   );
 };
