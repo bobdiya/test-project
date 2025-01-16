@@ -6,6 +6,7 @@ import Categories from './pages/Categories';
 import Cart from './pages/Cart';
 import { CarProvider } from './context/CarContext';
 import { CartProvider } from './context/CartContext';
+import Checkout from './pages/Checkout'; // Import the Checkout page
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </Router>
       </CartProvider>

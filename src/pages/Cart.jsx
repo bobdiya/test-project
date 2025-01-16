@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, dispatch } = useContext(CartContext);
 
   const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -26,6 +28,7 @@ const Cart = () => {
           </ul>
           <h3>Total Price: ${totalPrice}</h3>
           <button onClick={() => dispatch({ type: 'CLEAR_CART' })}>Clear Cart</button>
+          <button onClick={() => navigate('/checkout')}>Proceed to Checkout</button>
         </>
       )}
     </div>
